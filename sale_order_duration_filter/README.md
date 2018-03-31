@@ -1,7 +1,7 @@
 
 ------------------------------------
 
-Odoo Version : Odoo 11.0 Community
+Odoo Version : Odoo 9.0 Community
 
 
 Installation 

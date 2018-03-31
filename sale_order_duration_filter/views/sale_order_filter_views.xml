@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<openerp>
   <data>
       <record id="view_sale_order_inherit_search" model="ir.ui.view">
       <field name="name">sale.order.search.expand.filter</field>
       <field name="model">sale.order</field>
-      <field name="inherit_id" ref="sale.sale_order_view_search_inherit_sale"/>
+      <field name="inherit_id" ref="sale.view_sales_order_filter"/>
       <field name="arch" type="xml">
         <xpath expr="//filter[@name='my_sale_orders_filter']" position="before">
 
-          <filter string="Today" name="today" domain="[('date_order', '&gt;=', datetime.datetime.now().strftime('%Y-%m-%d 00:00:00')),('date_order', '&lt;=', datetime.datetime.now().strftime('%Y-%m-%d 23:59:59'))]" />
+           <filter string="Today" name="today" domain="[('date_order', '&gt;=', datetime.datetime.now().strftime('%Y-%m-%d 00:00:00')),('date_order', '&lt;=', datetime.datetime.now().strftime('%Y-%m-%d 23:59:59'))]" />
 
            <filter string="Yesterday" name="sale_ordeyesterday" domain="[('date_order','&gt;=', ((context_today()  + relativedelta(days=-1)).strftime('%Y-%m-%d'))),
            ('date_order','&lt;=', ((context_today()  + relativedelta(days=-1)).strftime('%Y-%m-%d')))]"/>
@@ -19,33 +19,8 @@
            <filter string="Last Month" domain="[('date_order','&lt;=', (context_today()-relativedelta(day=31, months=1)).strftime('%%Y-%%m-%%d')),('date_order','&gt;=',(context_today()-relativedelta(day=1,months=1)).strftime('%%Y-%%m-%%d'))]"/>
 
            <filter string="Last Year" name="last_year" domain="[('date_order','&gt;=',(context_today()-relativedelta(years=1)).strftime('%%Y-01-01')),('date_order','&lt;=', time.strftime('%%Y-01-01'))]"/>
-
-        </xpath>
-      </field>
-    </record>
-
-
-     <record id="view_sale_order_inherit_search1" model="ir.ui.view">
-      <field name="name">sale.order.search.expand.filter</field>
-      <field name="model">sale.order</field>
-      <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
-      <field name="arch" type="xml">
-        <xpath expr="//filter[@name='my_sale_orders_filter']" position="before">
-
-         <filter string="Today" name="today" domain="[('date_order', '&gt;=', datetime.datetime.now().strftime('%Y-%m-%d 00:00:00')),('date_order', '&lt;=', datetime.datetime.now().strftime('%Y-%m-%d 23:59:59'))]" />
-
-          <filter string="Yesterday" name="yesterday" domain="[('date_order','&gt;=', ((context_today()  + relativedelta(days=-1)).strftime('%Y-%m-%d'))),
-         ('date_order','&lt;=', ((context_today()  + relativedelta(days=-1)).strftime('%Y-%m-%d')))]"/>
-          
-         <filter string="Last week" name="last_week" domain="[('date_order','&gt;=', ((context_today()  + relativedelta(days=0, weeks=-1)).strftime('%Y-%m-%d'))),
-         ('date_order','&lt;=', ((context_today()  + relativedelta(days=5, weeks=-1)).strftime('%Y-%m-%d')))]"/>
-        
-         <filter string="Last Month" domain="[('date_order','&lt;=', (context_today()-relativedelta(day=31, months=1)).strftime('%%Y-%%m-%%d')),('date_order','&gt;=',(context_today()-relativedelta(day=1,months=1)).strftime('%%Y-%%m-%%d'))]"/>
-
-         <filter string="Last Year" name="last_year" domain="[('date_order','&gt;=',(context_today()-relativedelta(years=1)).strftime('%%Y-01-01')),('date_order','&lt;=', time.strftime('%%Y-01-01'))]"/>
-
         </xpath>
       </field>
     </record>
   </data>
-</odoo>
+</openerp>
