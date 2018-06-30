@@ -10,7 +10,7 @@
     'license': 'AGPL-3',
     'description': 'Manages duration filtering for sale orders\
      and quotations.',
-    'depends': ['base', 'sale'],
+    'depends': ['base', 'sale_managemet'],
     'data': [
         'views/sale_order_filter_views.xml',
     ],
