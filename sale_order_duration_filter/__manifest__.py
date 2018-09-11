@@ -2,7 +2,7 @@
 {
     'name': 'Sale Order Duration Filter',
     'category': 'sale',
-    'version': '1.1',
+    'version': '11.0.1.0.0',
     'summary': 'This module manages the filtering based on duration of sales\
      orders as well as quotations',
     'website': 'http://www.aktivsoftware.com',
