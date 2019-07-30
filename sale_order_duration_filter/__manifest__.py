@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Sale Order Duration Filter',
+    'name': 'Sale Order Timely Group by Filter',
     'category': 'sale',
     'version': '10.0.1.0.0',
     'summary': 'This module manages the filtering based on duration of sales\
